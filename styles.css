@@ -1,0 +1,659 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.navbar-logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-title {
+    color: #34495e;
+    font-weight: 600;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #34495e;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Hover and Active Effects */
+.nav-link:hover,
+.nav-link:focus {
+    color: #1abc9c;
+    transform: scale(1.1);
+}
+
+.nav-link.active {
+    color: #3498db;
+}
+
+/* Hire Me Button */
+.btn-success {
+    background-color: #1abc9c;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #16a085;
+    transform: scale(1.1);
+}
+
+/* Social Media Icons */
+.navbar-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #34495e;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #1abc9c;
+    transform: scale(1.2);
+}
+
+.social-icon.whatsapp:hover {
+    color: #25d366;
+}
+
+.social-icon.linkedin:hover {
+    color: #0077b5;
+}
+
+.social-icon.github:hover {
+    color: #333333;
+}
+
+/* Home Section Styling */
+.home-section {
+    background-image: url('resources/photos/maheesha_01.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+/* Add a slight overlay on the background image */
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Dark transparent overlay */
+    z-index: 1;
+}
+
+/* Ensure text and button are above the overlay */
+.home-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Text Content */
+.welcome-text {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    animation: fadeInDown 2s ease-in-out;
+}
+
+.subtitle-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 10px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+/* Button Styling */
+.project-button {
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #1abc9c;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.project-button:hover {
+    background-color: #16a085;
+    transform: scale(1.1);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .welcome-text {
+        font-size: 2.5rem;
+    }
+
+    .subtitle-text {
+        font-size: 1.2rem;
+    }
+
+    .project-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Project Styling */
+
+.projects-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Project Cards */
+.project-card {
+    perspective: 1000px;
+    margin: 20px 0;
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s ease;
+}
+
+.card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-front img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.project-title {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    padding: 20px;
+    text-align: center;
+}
+
+.project-card:hover .card-front {
+    transform: rotateY(-180deg);
+}
+
+.project-card:hover .card-back {
+    transform: rotateY(0);
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #1abc9c;
+    transform: scale(1.2);
+}
+
+/* Hover Effects */
+.project-title:hover {
+    color: #1abc9c;
+    transform: scale(1.1);
+}
+
+/* Make the entire card clickable */
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Ensure the card maintains hover effects */
+.project-card-link:hover .project-card {
+    transform: scale(1.05);
+    /* Adds a subtle zoom effect */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Prevent default link styles from affecting children */
+.project-card-link .social-icons a {
+    color: #333;
+    /* Override color for social icons */
+    text-decoration: none;
+}
+
+.project-card-link .social-icons a:hover {
+    color: #1abc9c;
+}
+
+/* Services Section */
+.services-section {
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #1abc9c;
+    margin-bottom: 50px;
+}
+
+/* Service Card */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.service-card i {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover i {
+    color: #16a085;
+    transform: scale(1.2);
+}
+
+/* Service Card Title */
+.service-card h5 {
+    margin-top: 15px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover h5 {
+    color: #1abc9c;
+}
+
+/* Service Card Description */
+.service-card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.contact-form-section,
+.contact-details-section,
+.google-maps-section {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 50px 0;
+    position: relative;
+}
+
+.footer h5 {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer p,
+.footer ul {
+    font-size: 0.9rem;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #1abc9c;
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    color: #ccc;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #1abc9c;
+    transform: scale(1.2);
+}
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #16a085;
+    transform: scale(1.1);
+}
+
+/* About Me Section */
+.about-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #16a085;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.personal-details h5 {
+    font-size: 1.2rem;
+    color: #16a085;
+    margin-top: 20px;
+}
+
+.personal-details p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.download-cv {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+}
+
+.download-cv:hover {
+    background-color: #16a085;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* Responsive Layout */
+.project-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-link {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #007bff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pagination-link.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination-link:hover {
+    background-color: #f8f9fa;
+}
+
+/* Center the pagination buttons */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0; /* Add space above and below the pagination */
+    width: 100%; /* Ensure full-width alignment */
+}
+
+.pagination-link {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #007bff;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-link.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination-link:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+}
